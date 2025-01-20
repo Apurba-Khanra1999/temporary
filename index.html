@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"/>
+    <link rel="stylesheet" href="notepadcss.css">
+    <!-- <script src="main.js" defer type="module"></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <title>Best & Free Digital Note Taking App | Personal use | All Devices</title>
+
+    <meta name="keywords" content="note-taking app for windows, best note-taking app for students, note-taking app for android, best note-taking app with stylus, best note-taking app with stylus android, best note-taking app for students free, note-taking apps free, note-taking app for windows with stylus, evernote, microsoft onenote, note taking app for students, note taking app for pc, free note taking app, best note taking app, note taking website, note-taking app, note-taking app for windows, notes, note taking free, digital note taking app" />
+
+    <meta name="description" content="Capture notes, share them with others, and access them from your computer, phone, or tablet. Integrate Memory with your daily life and streamline your workflow. Sign up today!" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="Article" />
+    <meta property="og:title" content="Best & Free Digital Note Taking App | Personal use | All Devices" />
+    <meta property="og:site_name" content="Best & Free Digital Note Taking App | Personal use | All Devices" />
+    <meta property="og:description" content="Capture notes, share them with others, and access them from your computer, phone, or tablet. Integrate Memory with your daily life and streamline your workflow. Sign up today!" />
+    <meta property="og:image" content="favicon_io/favicon-32x32.png" />
+
+    <style>
+      .floating-buttons {
+        position: fixed;
+        top: 8rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      
+  
+      #tabs {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+        scrollbar-color: #d1d5db #f9fafb;
+      }
+      
+      #tabs::-webkit-scrollbar {
+        height: 2px; /* Adjust the height of the scrollbar */
+        width: 10px;
+      }
+      
+      #tabs::-webkit-scrollbar-thumb {
+        background-color: #d1d5db; /* Thumb color */
+        border-radius: 10px;
+      }
+      
+      #tabs::-webkit-scrollbar-track {
+        background-color: #f9fafb; /* Track color */
+      }
+  
+      #tabs button.border-dashed {
+        border-bottom-style: dashed;
+      }
+      
+      #tabs button.opacity-50 {
+        opacity: 0.5;
+      }
+      
+    </style>
+  </head>
+  <body class="" id="main_body">
+    
+    <div class="flex items-center justify-between px-8 pt-4 shadow-2xl">
+      <!-- Logo on the left -->
+      <div>
+        <img src="assets/logo-memory.png" alt="Logo" class="h-12">
+      </div>
+
+      <div class="tab-container">
+        <input type="radio" name="tab" id="tab1" class="tab tab--1" onclick="window.location.href='#playground'"/>
+        <label class="tab_label" for="tab1"  onclick="window.location.href='#playground'">Playground</label>
+      
+        <input type="radio" name="tab" id="tab2" class="tab tab--2" onclick="window.location.href='#productivity'" />
+        <label class="tab_label" for="tab2" onclick="window.location.href='#productivity'">Features</label>
+      
+        <input type="radio" name="tab" id="tab3" class="tab tab--3" onclick="window.location.href='#contacts'"/>
+        <label class="tab_label" for="tab3" onclick="window.location.href='#contacts'">Contact</label>
+      
+        <div class="indicator"></div>
+      </div>
+
+      <!-- Contact Button on the right -->
+      <!-- <div class="flex gap-1">
+        <button class="relative border hover:border-purple-600 duration-500 group cursor-pointer text-purple-50  overflow-hidden h-12 w-40 rounded-md bg-purple-800 p-2 flex justify-center items-center font-extrabold" id="google-login-btn">
+          <div class="absolute z-10 w-48 h-48 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-900 delay-150 group-hover:delay-75"></div>
+          <div class="absolute z-10 w-40 h-40 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-800 delay-150 group-hover:delay-100"></div>
+          <div class="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-700 delay-150 group-hover:delay-150"></div>
+          <div class="absolute z-10 w-24 h-24 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-600 delay-150 group-hover:delay-200"></div>
+          <div class="absolute z-10 w-16 h-16 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-500 delay-150 group-hover:delay-300"></div>
+          <p class="z-10">Join Us</p>
+        </button>
+      </div> -->
+      <div id="login-container">
+        <!-- Google Login Button -->
+        <a href="documentation.html" target="_blank">
+          <button
+          class="relative border hover:border-purple-600 duration-500 group cursor-pointer text-purple-50  overflow-hidden h-12 w-40 rounded-md bg-purple-800 p-2 flex justify-center items-center font-extrabold"
+          id="google-login-btn"
+        >
+          <div class="absolute z-10 w-48 h-48 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-900 delay-150 group-hover:delay-75"></div>
+          <div class="absolute z-10 w-40 h-40 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-800 delay-150 group-hover:delay-100"></div>
+          <div class="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-700 delay-150 group-hover:delay-150"></div>
+          <div class="absolute z-10 w-24 h-24 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-600 delay-150 group-hover:delay-200"></div>
+          <div class="absolute z-10 w-16 h-16 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-purple-500 delay-150 group-hover:delay-300"></div>
+          <p class="z-10">Documentation</p>
+        </button>
+        </a>
+      </div>
+      
+      <div id="profile-container" class="hidden">
+        <img id="profile" class="w-12 h-12 rounded-full shadow-xl cursor-pointer" src="" alt="Profile" title="Profile Image"/>
+      </div>
+      
+      <!-- Modal -->
+      <div id="profile-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 shadow-lg w-80 relative">
+          <button
+            id="modal-close"
+            class="absolute top-2 right-2 text-2xl text-gray-600 hover:text-gray-800">
+            &times;
+          </button>
+          <div class="text-center ">
+            <img id="profile-modal-img" class="w-20 h-20 rounded-full shadow-2xl mx-auto mb-4" src="" alt="Profile" />
+            <h3 id="modal-username" class="text-lg font-semibold"></h3>
+            <p id="modal-useremail" class="text-sm text-gray-600"></p>
+          </div>
+          <button
+            id="logout-btn"
+            class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-full">
+            <i class="ri-shut-down-line"></i> Logout
+          </button>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="bg-white text-gray-800 min-h-screen flex items-center justify-center p-4" id="playground">
+      <div class="bg-white border-2 border-black shadow-2xl rounded-2xl w-full max-w-7xl h-[85vh] flex gap-2">
+        <!-- Main Content -->
+        <div class="bg-white overflow-hidden rounded-2xl w-full flex flex-col">
+          <!-- Tabs Header -->
+          <div id="tabs" class="flex border-b border-gray-200">
+            <button id="addTabButton" class="px-4 py-2 bg-purple-700 rounded-tl-xl text-white font-semibold hover:text-gray-100 flex items-center gap-2">
+              <i class="ri-menu-add-fill"></i> Add Tab
+            </button>
+          </div>
+    
+          <!-- Editor Panels -->
+          <div id="tabContents" class="flex-1 overflow-hidden rounded-b-2xl">
+            <!-- Dynamic content will be injected here -->
+          </div>
+          <div>
+            <h6 class="font-sans text-right pr-2 text-gray-400">Contents will be auto saved</h6>
+          </div>
+        </div>
+
+      <!-- Sticky Notes Section  -->
+        <div class="w-1/4 bg-gray-100 rounded-tr-2xl rounded-br-2xl flex flex-col p-4">
+          <h3 class="text-xl font-bold text-purple-700 mb-4">Tasks to complete</h3>
+          <div class="flex items-center gap-2 mb-4">
+            <input id="todoInput" type="text" placeholder="Add new task..." class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-purple-300" />
+            <button id="addTodoButton" class="bg-purple-500 text-white px-3 py-2 rounded-lg hover:bg-purple-600">
+              <i class="ri-add-large-line"></i>
+            </button>
+          </div>
+          <ul id="todoList" class="flex-1 scrollbar space-y-2 overflow-y-auto pr-2">
+            <!-- Tasks will be dynamically added here -->
+          </ul>
+        </div>
+    
+      </div>
+    </div>
+
+    <!-- HEADING - we stand for -->
+      <div class="heading-loader pt-20">
+        <p class="font-bold text-3xl">We stand for </p>
+        <div class="heading-words text-4xl">
+          <span class="heading-word">PRODUCTIVITY</span>
+          <span class="heading-word">USER FRIENDLY</span>
+          <span class="heading-word">PERSONALIZED</span>
+          <span class="heading-word">CREATIVITY</span>
+          <span class="heading-word">TECHNOLOGY</span>
+          <span class="heading-word">REUSABILITY</span>
+        </div>
+      </div>
+
+    <div id="productivity">
+          <!-- 3 cards sections  -->
+        <div class="flex justify-between gap-10 px-24 pt-16 pb-10" >
+          <div class="card">
+            <div class="content">
+              <div class="name">Effortless Note-Taking</div>
+              <div class="handle">Productivity</div>
+              <div class="title">
+                Quickly write and organize your ideas with an easy-to-use interface and powerful search options.
+              </div>
+            </div>
+            <div class="dots orange-dots"></div>
+            <div class="dots pink-dots"></div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="name">Smart To-Do Lists</div>
+              <div class="handle">Utility</div>
+              <div class="title">
+                Create, prioritize, and track your tasks with reminders to stay on top of your day.
+              </div>
+            </div>
+            <div class="dots orange-dots"></div>
+            <div class="dots pink-dots"></div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="name">Easy Sharing & Collaboration</div>
+              <div class="handle">User Friendly</div>
+              <div class="title">
+                Share notes and tasks with others and work together seamlessly in real time.
+              </div>
+            </div>
+            <div class="dots orange-dots"></div>
+            <div class="dots pink-dots"></div>
+          </div>
+        </div>
+
+        <!-- 3 cards sections  -->
+        <div class="flex justify-between gap-10 px-24 pb-20">
+          <div class="card">
+            <div class="content">
+              <div class="name">Secure Cloud Sync</div>
+              <div class="handle">Technology</div>
+              <div class="title">
+                Access your notes and lists anytime, anywhere, with safe and reliable cloud storage.
+              </div>
+            </div>
+            <div class="dots orange-dots"></div>
+            <div class="dots pink-dots"></div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="name">Personalized Experience</div>
+              <div class="handle">Creative</div>
+              <div class="title">
+                Choose themes, layouts, and widgets to make the app look and feel just the way you like.
+              </div>
+            </div>
+            <div class="dots orange-dots"></div>
+            <div class="dots pink-dots"></div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="name">All-in-One Productivity Tools</div>
+              <div class="handle">Personalized</div>
+              <div class="title">
+                Get extras like habit trackers, calendars, and progress insights to achieve more every day.
+              </div>
+            </div>
+            <div class="dots orange-dots"></div>
+            <div class="dots pink-dots"></div>
+          </div>
+        </div>
+    </div>
+    
+
+    
+    <!-- Testimonials -->
+    <section class="bg-white" id="testimonials">
+      <div class="mx-auto max-w-screen-xl px-4 pb-20 ">
+        <div class="heading-loader pt-20">
+          <p class="font-bold text-3xl">Users appreciates our </p>
+          <div class="heading-words text-4xl">
+            <span class="heading-word">HARDWORD</span>
+            <span class="heading-word">DEDICATION</span>
+            <span class="heading-word">CREATIVITY</span>
+            <span class="heading-word">SUPPORT</span>
+            <span class="heading-word">FLEXIBILITY</span>
+          </div>
+        </div>
+    
+        <div class="mt-8">
+          <div id="keen-slider" class="keen-slider">
+            <div class="keen-slider__slide opacity-40 transition-opacity duration-500">
+              <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                <div class="flex items-center gap-4">
+                  <img
+                    alt=""
+                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    class="size-14 rounded-full object-cover"
+                  />
+    
+                  <div>
+                    <div class="flex justify-center gap-0.5 text-purple-600">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                    </div>
+    
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Sam Sinha</p>
+                  </div>
+                </div>
+    
+                <p class="mt-4 text-gray-700">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
+                  accusamus error officiis atque voluptates magnam!
+                </p>
+              </blockquote>
+            </div>
+    
+            <div class="keen-slider__slide opacity-40 transition-opacity duration-500">
+              <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                <div class="flex items-center gap-4">
+                  <img
+                    alt=""
+                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    class="size-14 rounded-full object-cover"
+                  />
+    
+                  <div>
+                    <div class="flex justify-center gap-0.5 text-purple-500">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                    </div>
+    
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                  </div>
+                </div>
+    
+                <p class="mt-4 text-gray-700">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
+                  accusamus error officiis atque voluptates magnam!
+                </p>
+              </blockquote>
+            </div>
+    
+            <div class="keen-slider__slide opacity-40 transition-opacity duration-500">
+              <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                <div class="flex items-center gap-4">
+                  <img
+                    alt=""
+                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    class="size-14 rounded-full object-cover"
+                  />
+    
+                  <div>
+                    <div class="flex justify-center gap-0.5 text-purple-500">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                    </div>
+    
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                  </div>
+                </div>
+    
+                <p class="mt-4 text-gray-700">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
+                  accusamus error officiis atque voluptates magnam!
+                </p>
+              </blockquote>
+            </div>
+    
+            <div class="keen-slider__slide opacity-40 transition-opacity duration-500">
+              <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                <div class="flex items-center gap-4">
+                  <img
+                    alt=""
+                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    class="size-14 rounded-full object-cover"
+                  />
+    
+                  <div>
+                    <div class="flex justify-center gap-0.5 text-purple-500">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                    </div>
+    
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                  </div>
+                </div>
+    
+                <p class="mt-4 text-gray-700">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
+                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
+                  accusamus error officiis atque voluptates magnam!
+                </p>
+              </blockquote>
+            </div>
+          </div>
+    
+          <div class="mt-6 flex items-center justify-center gap-4">
+            <button
+              aria-label="Previous slide"
+              id="keen-slider-previous"
+              class="text-gray-600 transition-colors hover:text-gray-900">
+              <i class="ri-arrow-left-line"></i>
+            </button>
+    
+            <p class="w-16 text-center text-sm text-gray-700">
+              <span id="keen-slider-active"></span>
+              /
+              <span id="keen-slider-count"></span>
+            </p>
+    
+            <button
+              aria-label="Next slide"
+              id="keen-slider-next"
+              class="text-gray-600 transition-colors hover:text-gray-900">
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- id="contacts" -->
+    <!-- Contact Us section  -->
+    <div class="flex justify-center gap-20 px-24 pt-28 pb-20 bg-[#e8e8e8]" id="contacts">
+        <div class="card1">
+            <a class="singup">Feedback Form</a>
+            <div class="inputBox1">
+              <input type="text" required="required">
+              <span class="user">Name</span>
+            </div>
+            <div class="inputBox1">
+                <input type="text" required="required">
+                <span class="user">Email</span>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" required="required">
+                <span>Improvement</span>
+            </div>
+
+            <button class="enter">Enter</button>
+
+        </div>
+        <div>
+          <img src="assets/contact.png" alt="" width="600px" class="rounded-xl shadow-xl">
+        </div>
+      
+    </div>
+
+    <!-- ASIDE -  -->
+    <!-- <aside class="fixed bottom-4 end-4 z-50 flex items-center justify-center gap-4 rounded-lg bg-black px-5 py-3 text-white">
+      <a onclick="window.location.href='#contacts'" class="text-sm font-medium hover:opacity-75">
+        Hello👋 Leave us a Feedback
+      </a>
+  
+      <button class="rounded bg-white/20 p-1 hover:bg-white/10">
+        <span class="sr-only">Close</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fillRule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+    </aside> -->
+
+    <!-- FOOTER  -->
+    <footer class="bg-gray-50">
+      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <div class="flex justify-center text-teal-600 sm:justify-start">
+            <img src="assets/logo-memory.png" alt="memory-logo" title="memory-logo" width="130">
+          </div>
+          <p class="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
+            Crafted with 💖 by <span class="font-bold text-purple-600 text-lg">Apurba Khanra</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+      <button id="downloadButton" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full">
+        <i class="fa-solid fa-cloud-arrow-down"></i>
+      </button>
+      <button id="resetButton" class="bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 rounded-lg w-full">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </button>
+    </div>
+
+  <script>
+    const tabs = document.getElementById('tabs');
+    const tabContents = document.getElementById('tabContents');
+    const addTabButton = document.getElementById('addTabButton');
+    const resetButton = document.getElementById('resetButton');
+    const downloadButton = document.getElementById('downloadButton');
+    const todoInput = document.getElementById('todoInput');
+    const addTodoButton = document.getElementById('addTodoButton');
+    const todoList = document.getElementById('todoList');
+    let currentTabId = null;
+    let dragSource = null;
+
+    const state = {
+      tabs: [],
+      contents: {},
+      names: {},
+      todos: []
+    };
+
+    // To-Do List Functions
+    function addTodo() {
+      const task = todoInput.value.trim();
+      if (!task) return;
+      const id = Date.now();
+      state.todos.push({ id, task, completed: false });
+      saveState();
+      renderTodos();
+      todoInput.value = '';
+    }
+
+    function toggleTodoCompletion(id) {
+      const todo = state.todos.find(todo => todo.id === id);
+      if (todo) {
+        todo.completed = !todo.completed;
+        saveState();
+        renderTodos();
+      }
+    }
+
+    function deleteTodo(id) {
+      state.todos = state.todos.filter(todo => todo.id !== id);
+      saveState();
+      renderTodos();
+    }
+
+    function renderTodos() {
+      todoList.innerHTML = '';
+      state.todos.forEach(todo => {
+        const li = document.createElement('li');
+        li.className = "flex items-center justify-between py-2 px-3 bg-purple-300 hover:bg-purple-400 rounded-lg shadow cursor-pointer";
+        li.draggable = true; // Make each task draggable
+    
+        li.innerHTML = `
+          <div class="flex items-center">
+            <input type="checkbox" class="mr-2" ${todo.completed ? 'checked' : ''} onchange="toggleTodoCompletion(${todo.id})" />
+            <span class="${todo.completed ? 'line-through text-gray-500' : ''}">${todo.task}</span>
+          </div>
+          <button onclick="deleteTodo(${todo.id})" class="text-red-500 hover:text-red-700">
+            <i class="ri-close-circle-line"></i>
+          </button>
+        `;
+    
+        // Event listeners for drag and drop
+        li.addEventListener('dragstart', handleDragStart);
+        li.addEventListener('dragover', handleDragOver);
+        li.addEventListener('dragenter', handleDragEnter);
+        li.addEventListener('dragleave', handleDragLeave);
+        li.addEventListener('drop', handleDrop);
+        li.addEventListener('dragend', handleDragEnd);
+    
+        todoList.appendChild(li);
+      });
+    }
+    
+    // Dragging handlers
+    function handleDragStart(e) {
+      dragSource = e.target;
+      e.target.classList.add('opacity-50');
+    }
+    
+    function handleDragOver(e) {
+      e.preventDefault();
+      e.target.classList.add('border-dashed', 'border-2');
+    }
+    
+    function handleDragEnter(e) {
+      e.preventDefault();
+    }
+    
+    function handleDragLeave(e) {
+      e.target.classList.remove('border-dashed', 'border-2');
+    }
+    
+    function handleDrop(e) {
+      e.preventDefault();
+      if (dragSource !== e.target) {
+        const draggedId = dragSource.querySelector('span').innerText;
+        const droppedId = e.target.querySelector('span').innerText;
+    
+        // Swap tasks in state.todos array
+        const draggedTaskIndex = state.todos.findIndex(todo => todo.task === draggedId);
+        const droppedTaskIndex = state.todos.findIndex(todo => todo.task === droppedId);
+    
+        if (draggedTaskIndex !== -1 && droppedTaskIndex !== -1) {
+          [state.todos[draggedTaskIndex], state.todos[droppedTaskIndex]] = [state.todos[droppedTaskIndex], state.todos[draggedTaskIndex]];
+          saveState();
+          renderTodos(); // Re-render list after swap
+        }
+      }
+    
+      e.target.classList.remove('border-dashed', 'border-2');
+    }
+    
+    function handleDragEnd(e) {
+      e.target.classList.remove('opacity-50');
+      dragSource = null;
+    }
+
+    addTodoButton.addEventListener('click', addTodo);
+    todoInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') addTodo();
+    });
+
+    function createTab(id) {
+      const tabButton = document.createElement('button');
+      tabButton.id = `tab-${id}`;
+      tabButton.className = 'px-4 py-2 text-gray-500 hover:text-gray-600 border-b-2 flex items-center';
+      tabButton.draggable = true; // Make the tab draggable
+      tabButton.innerHTML = `
+        <span id="tab-name-${id}">${state.names[id] || `Tab ${id}`}</span>
+        <span class="ml-2 text-blue-500 cursor-pointer" onclick="renameTab('${id}')"><i class="ri-pencil-fill"></i></span>
+        <span class="ml-2 text-red-500 cursor-pointer" onclick="deleteTab('${id}')"><i class="ri-close-large-line"></i></span>
+      `;
+      tabButton.onclick = (e) => {
+        if (!e.target.closest('span')?.classList.contains('cursor-pointer')) {
+          switchTab(id);
+        }
+      };
+      tabs.appendChild(tabButton);
+      makeTabDraggable(tabButton); // Enable drag-and-drop for this tab
+    }
+    
+
+    function createTabContent(id) {
+      const textarea = document.createElement('textarea');
+      textarea.id = `content-${id}`;
+      textarea.className = 'w-full h-full p-4 border-0 focus:outline-none';
+      textarea.placeholder = `Start typing in Tab ${id}...`;
+      textarea.style.display = 'none';
+      textarea.addEventListener('input', () => {
+        state.contents[id] = textarea.value;
+        saveState();
+      });
+      tabContents.appendChild(textarea);
+    }
+
+    function switchTab(id) {
+      if (currentTabId !== null) {
+        document.getElementById(`content-${currentTabId}`).style.display = 'none';
+        document.getElementById(`tab-${currentTabId}`).classList.remove('border-purple-500', 'text-purple-500','bg-purple-200');
+      }
+      currentTabId = id;
+      document.getElementById(`content-${id}`).style.display = 'block';
+      document.getElementById(`tab-${id}`).classList.add('border-purple-500', 'text-purple-500','bg-purple-200');
+    }
+
+    function deleteTab(id) {
+      if (state.tabs.length === 1) {
+        alert('You must have at least one tab open.');
+        return;
+      }
+      const tabButton = document.getElementById(`tab-${id}`);
+      const tabContent = document.getElementById(`content-${id}`);
+      tabs.removeChild(tabButton);
+      tabContents.removeChild(tabContent);
+      
+      state.tabs = state.tabs.filter(tabId => tabId !== id);
+      delete state.contents[id];
+      delete state.names[id];
+      saveState();
+
+      if (state.tabs.length > 0) {
+        switchTab(state.tabs[0]);
+      }
+    }
+
+    function renameTab(id) {
+      const tabNameSpan = document.getElementById(`tab-name-${id}`);
+      const currentName = tabNameSpan.textContent;
+
+      const inputField = document.createElement('input');
+      inputField.type = 'text';
+      inputField.value = currentName;
+      inputField.className = 'border p-1 text-gray-700 rounded-2xl';
+      inputField.onblur = () => saveRenamedTab(id, inputField.value);
+      inputField.onkeydown = (e) => {
+        if (e.key === 'Enter') {
+          saveRenamedTab(id, inputField.value);
+        }
+      };
+
+      tabNameSpan.replaceWith(inputField);
+      inputField.focus();
+    }
+
+    function saveRenamedTab(id, newName) {
+      const inputField = document.querySelector(`#tab-${id} input`);
+      const span = document.createElement('span');
+      span.id = `tab-name-${id}`;
+      span.textContent = newName || `Tab ${id}`;
+      inputField.replaceWith(span);
+      state.names[id] = newName || `Tab ${id}`;
+      saveState();
+    }
+
+    function saveState() {
+      localStorage.setItem('notepadState', JSON.stringify(state));
+    }
+
+    function loadState() {
+      const savedState = JSON.parse(localStorage.getItem('notepadState') || '{}');
+      if (savedState.tabs && savedState.tabs.length) {
+        Object.assign(state, savedState);
+        savedState.tabs.forEach(tabId => {
+          createTab(tabId);
+          createTabContent(tabId);
+          document.getElementById(`content-${tabId}`).value = state.contents[tabId];
+        });
+        renderTodos();
+        switchTab(state.tabs[0]);
+        makeTabsDraggable(); // Ensure drag-and-drop is enabled
+      } else {
+        addNewTab();
+      }
+    }
+    
+
+    function addNewTab() {
+      const newId = Date.now().toString();
+      state.tabs.push(newId);
+      state.contents[newId] = '';
+      state.names[newId] = `Tab ${newId}`;
+      createTab(newId);
+      createTabContent(newId);
+      switchTab(newId);
+      saveState();
+    }
+
+    addTabButton.addEventListener('click', addNewTab);
+    resetButton.addEventListener('click', () => {
+      if (currentTabId) {
+        document.getElementById(`content-${currentTabId}`).value = '';
+        state.contents[currentTabId] = '';
+        saveState();
+      }
+    });
+    downloadButton.addEventListener('click', () => {
+      let allContent = '';
+      state.tabs.forEach(tabId => {
+        const tabName = state.names[tabId];
+        const tabContent = state.contents[tabId];
+        allContent += `### ${tabName} ###\n\n${tabContent}\n\n---\n\n`;
+      });
+
+      const blob = new Blob([allContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'AllTabsContent.txt';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    window.onload = loadState;
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  </script>
+  <!-- <script>
+    document.addEventListener("keydown", function(event) {
+    // Check if Ctrl+U, F12, or Ctrl+Shift+I is pressed
+    if (
+        (event.ctrlKey && (event.key === 'u' || event.keyCode === 123)) || // Ctrl+U or Ctrl+F12
+        event.key === 'F12' || (event.ctrlKey && (event.key === 's' || event.keyCode === 123)) || (event.ctrlKey && (event.key === 'S' || event.keyCode === 123))
+    ) {
+        event.preventDefault(); // Prevent default action
+    }
+});
+  </script> -->
+  <script>
+    function makeTabsDraggable() {
+      const tabsContainer = document.getElementById('tabs');
+    
+      tabsContainer.addEventListener('dragstart', (e) => {
+        const tabId = e.target.id;
+        e.dataTransfer.setData('text/plain', tabId);
+        e.target.classList.add('opacity-50');
+      });
+    
+      tabsContainer.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const tab = e.target.closest('button');
+        if (tab) tab.classList.add('border-dashed');
+      });
+    
+      tabsContainer.addEventListener('dragleave', (e) => {
+        const tab = e.target.closest('button');
+        if (tab) tab.classList.remove('border-dashed');
+      });
+    
+      tabsContainer.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const draggedTabId = e.dataTransfer.getData('text/plain');
+        const targetTab = e.target.closest('button');
+    
+        if (draggedTabId && targetTab && draggedTabId !== targetTab.id) {
+          const draggedTabIndex = state.tabs.indexOf(draggedTabId.replace('tab-', ''));
+          const targetTabIndex = state.tabs.indexOf(targetTab.id.replace('tab-', ''));
+    
+          // Rearrange state.tabs array
+          const [removed] = state.tabs.splice(draggedTabIndex, 1);
+          state.tabs.splice(targetTabIndex, 0, removed);
+    
+          // Reorder tabs in the DOM
+          tabsContainer.insertBefore(
+            document.getElementById(draggedTabId),
+            draggedTabIndex > targetTabIndex ? targetTab : targetTab.nextSibling
+          );
+    
+          saveState();
+        }
+        tabsContainer.querySelectorAll('button').forEach(tab => tab.classList.remove('border-dashed'));
+      });
+    
+      tabsContainer.addEventListener('dragend', (e) => {
+        e.target.classList.remove('opacity-50');
+      });
+    }
+    
+    // Call this function after creating a new tab
+    function makeTabDraggable(tabElement) {
+      tabElement.setAttribute('draggable', 'true');
+    }
+    
+  </script>
+
+  <script type="module">
+    import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+  
+    const keenSliderActive = document.getElementById('keen-slider-active')
+    const keenSliderCount = document.getElementById('keen-slider-count')
+  
+    const keenSlider = new KeenSlider(
+      '#keen-slider',
+      {
+        loop: true,
+        defaultAnimation: {
+          duration: 750,
+        },
+        slides: {
+          origin: 'center',
+          perView: 1,
+          spacing: 16,
+        },
+        breakpoints: {
+          '(min-width: 640px)': {
+            slides: {
+              origin: 'center',
+              perView: 1.5,
+              spacing: 16,
+            },
+          },
+          '(min-width: 768px)': {
+            slides: {
+              origin: 'center',
+              perView: 1.75,
+              spacing: 16,
+            },
+          },
+          '(min-width: 1024px)': {
+            slides: {
+              origin: 'center',
+              perView: 3,
+              spacing: 16,
+            },
+          },
+        },
+        created(slider) {
+          slider.slides[slider.track.details.rel].classList.remove('opacity-40')
+  
+          keenSliderActive.innerText = slider.track.details.rel + 1
+          keenSliderCount.innerText = slider.slides.length
+        },
+        slideChanged(slider) {
+          slider.slides.forEach((slide) => slide.classList.add('opacity-40'))
+  
+          slider.slides[slider.track.details.rel].classList.remove('opacity-40')
+  
+          keenSliderActive.innerText = slider.track.details.rel + 1
+        },
+      },
+      []
+    )
+  
+    const keenSliderPrevious = document.getElementById('keen-slider-previous')
+    const keenSliderNext = document.getElementById('keen-slider-next')
+  
+    keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
+    keenSliderNext.addEventListener('click', () => keenSlider.next())
+  </script>
+
+
+</body>
+</html>
