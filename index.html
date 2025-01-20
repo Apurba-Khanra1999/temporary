@@ -73,6 +73,20 @@
       #tabs button.opacity-50 {
         opacity: 0.5;
       }
+
+      /* Hide the button initially */
+      #scrollToTopBtn {
+        display: none;
+        position: fixed; /* Stay in place */
+        bottom: 20px; /* Place at the bottom */
+        right: 20px; /* Place at the right */
+        z-index: 99; /* Ensure it stays on top */
+        cursor: pointer; /* Add a mouse pointer on hover */
+      }
+      /* Show the button when the user scrolls down a bit */
+      .show-button {
+        display: block !important;
+      }
       
     </style>
   </head>
@@ -285,7 +299,7 @@
     <section class="bg-white" id="testimonials">
       <div class="mx-auto max-w-screen-xl px-4 pb-20 ">
         <div class="heading-loader pt-20">
-          <p class="font-bold text-3xl">Users appreciates our </p>
+          <p class="font-bold text-3xl">Users appreciates our</p>
           <div class="heading-words text-4xl">
             <span class="heading-word">HARDWORD</span>
             <span class="heading-word">DEDICATION</span>
@@ -301,8 +315,8 @@
               <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                 <div class="flex items-center gap-4">
                   <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    alt="priya sharma testimonial" title="priya sharma testimonial"
+                    src="assets/priya_sharma.png"
                     class="size-14 rounded-full object-cover"
                   />
     
@@ -315,14 +329,12 @@
                       <i class="ri-star-fill"></i>
                     </div>
     
-                    <p class="mt-0.5 text-lg font-medium text-gray-900">Sam Sinha</p>
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Priya Sharma</p>
                   </div>
                 </div>
     
                 <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                  accusamus error officiis atque voluptates magnam!
+                  I was skeptical at first, but this app has proven to be worth every penny. It's incredibly user-friendly and has significantly improved my productivity. I'm able to get more done in less time, and I feel more in control of my day. Highly recommend to anyone looking to boost their efficiency.
                 </p>
               </blockquote>
             </div>
@@ -331,8 +343,8 @@
               <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                 <div class="flex items-center gap-4">
                   <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    alt="ahmed ali testimonial" title="ahmed ali testimonial"
+                    src="assets/ahmed_ali.png"
                     class="size-14 rounded-full object-cover"
                   />
     
@@ -345,14 +357,12 @@
                       <i class="ri-star-fill"></i>
                     </div>
     
-                    <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Ahmed Ali</p>
                   </div>
                 </div>
     
                 <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                  accusamus error officiis atque voluptates magnam!
+                  This app has become a must-have for me. It's incredibly helpful for managing my time effectively, both at work and in my personal life. The features are well-designed and easy to use, and the app is constantly being updated with new and improved functionalities. I'm very satisfied.
                 </p>
               </blockquote>
             </div>
@@ -361,8 +371,8 @@
               <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                 <div class="flex items-center gap-4">
                   <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    alt="robin pal testimonial" title="robin pal testimonial"
+                    src="assets/robin_pal.png"
                     class="size-14 rounded-full object-cover"
                   />
     
@@ -375,14 +385,12 @@
                       <i class="ri-star-fill"></i>
                     </div>
     
-                    <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Robin Pal</p>
                   </div>
                 </div>
     
                 <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                  accusamus error officiis atque voluptates magnam!
+                  As a busy professional, this app is an essential tool in my daily routine. It helps me prioritize tasks, track my progress, and stay focused. The reminders and notifications are incredibly helpful, and I appreciate the flexibility to customize the app to my specific needs.
                 </p>
               </blockquote>
             </div>
@@ -391,8 +399,8 @@
               <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                 <div class="flex items-center gap-4">
                   <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                    alt="kavya goenka testimonial" title="kavya goenka testimonial"
+                    src="assets/kavya_goenka.png"
                     class="size-14 rounded-full object-cover"
                   />
     
@@ -405,14 +413,39 @@
                       <i class="ri-star-fill"></i>
                     </div>
     
-                    <p class="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">Kavya Goenka</p>
                   </div>
                 </div>
     
                 <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                  consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                  accusamus error officiis atque voluptates magnam!
+                  I was drowning in to-do lists and feeling overwhelmed. This app has been a lifesaver! It helps me break down large tasks into smaller, manageable chunks, and provides valuable insights into where my time is actually going. I'm more productive and less stressed.
+                </p>
+              </blockquote>
+            </div>
+            <div class="keen-slider__slide opacity-40 transition-opacity duration-500">
+              <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                <div class="flex items-center gap-4">
+                  <img
+                    alt="david lee testimonial" title="david lee testimonial"
+                    src="assets/david_lee.png"
+                    class="size-14 rounded-full object-cover"
+                  />
+    
+                  <div>
+                    <div class="flex justify-center gap-0.5 text-purple-500">
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                      <i class="ri-star-fill"></i>
+                    </div>
+    
+                    <p class="mt-0.5 text-lg font-medium text-gray-900">David Lee</p>
+                  </div>
+                </div>
+    
+                <p class="mt-4 text-gray-700">
+                  This app has completely revolutionized how I manage my time. The features are incredibly intuitive and the interface is sleek and easy to navigate. I'm finally able to stay on top of deadlines, reduce distractions, and actually enjoy my free time. Highly recommend!
                 </p>
               </blockquote>
             </div>
@@ -446,25 +479,30 @@
     <!-- id="contacts" -->
     <!-- Contact Us section  -->
     <div class="flex justify-center gap-20 px-24 pt-28 pb-20 bg-[#e8e8e8]" id="contacts">
+      <form id="contactForm" action="send_email_contact_form.php" method="POST" >
         <div class="card1">
-            <a class="singup">Feedback Form</a>
-            <div class="inputBox1">
-              <input type="text" required="required">
-              <span class="user">Name</span>
-            </div>
-            <div class="inputBox1">
-                <input type="text" required="required">
-                <span class="user">Email</span>
-            </div>
+          <a class="singup">Help us to Improve</a>
+          <div class="inputBox1">
+            <input type="text" required="required" id="name" name="name">
+            <span class="user">Name</span>
+          </div>
+          <div class="inputBox1">
+              <input type="text" required="required" id="email" name="email">
+              <span class="user">Email</span>
+          </div>
 
-            <div class="inputBox">
-                <input type="text" required="required">
-                <span>Improvement</span>
-            </div>
+          <div class="inputBox">
+              <input type="text" required="required" id="feedback" name="feedback">
+              <span>Feedback</span>
+          </div>
 
-            <button class="enter">Enter</button>
+          <button class="enter" id="submit-button-contact" type="submit">Submit</button>
 
-        </div>
+          <div id="response-message-contact"></div>
+
+      </div>
+      </form>
+        
         <div>
           <img src="assets/contact.png" alt="" width="600px" class="rounded-xl shadow-xl">
         </div>
@@ -513,6 +551,12 @@
         <i class="fa-solid fa-arrows-rotate"></i>
       </button>
     </div>
+
+    <button id="scrollToTopBtn" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
 
   <script>
     const tabs = document.getElementById('tabs');
@@ -926,6 +970,62 @@
     keenSliderPrevious.addEventListener('click', () => keenSlider.prev())
     keenSliderNext.addEventListener('click', () => keenSlider.next())
   </script>
+
+  <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) { // Show after scrolling 20px
+            scrollToTopBtn.classList.add("show-button");
+        } else {
+            scrollToTopBtn.classList.remove("show-button");
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  </script>
+
+  <!-- PHP MAILER  -->
+  <script>
+    // AJAX form submission
+    $(document).ready(function () {
+        $('#contactForm').on('submit', function (e) {
+            e.preventDefault(); 
+            const formData = $(this).serialize(); 
+            const submitButton = $('#submit-button-contact'); 
+            submitButton.prop('disabled', true).text('Sending...');
+            // Send form data via AJAX
+            $.ajax({
+                type: 'POST',
+                url: 'send_email_contact_form.php', 
+                data: formData,
+                success: function (response) {
+                    
+                    if(response=='ok'){
+                        $('#response-message-contact').text(response); 
+                        $('#contactForm')[0].reset(); 
+                        // submitButton.prop('disabled', false).text('Send');
+                        $('#response-message-contact').html('<div style="color:green;">We received you request. Our team will connect with you soon.</div>')
+                    }
+                    else{
+                        $('#response-message-contact').html('<div style="color:red;">Form failed to submit else</div>')
+                    }
+                    submitButton.prop('disabled', false).text('Let\'s Connect');
+                    
+                },
+                error: function () {
+                    submitButton.prop('disabled', false).text('Let\'s Connect');
+                    $('#response-message-contact').html('<div style="color:red;">Form failed to submit</div>')
+                }
+            });
+        });
+    });
+</script>
 
 
 </body>
