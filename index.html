@@ -42,6 +42,23 @@
         gap: 10px;
       }
 
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Color of the track */
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #a855f7; /* Color of the thumb */
+        border-radius: 2px; /* Rounded corners for the thumb */
+        border: 3px solid #f1f1f1; /* Add a border to the thumb */
+      }
+      
+      /* Optional: Add hover effect to the thumb */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #790bd8; /* Darker purple on hover */
+      }
       
   
       #tabs {
@@ -58,7 +75,7 @@
       }
       
       #tabs::-webkit-scrollbar-thumb {
-        background-color: #d1d5db; /* Thumb color */
+        background-color: #f2e8fc; /* Thumb color */
         border-radius: 10px;
       }
       
@@ -479,28 +496,40 @@
     <!-- id="contacts" -->
     <!-- Contact Us section  -->
     <div class="flex justify-center gap-20 px-24 pt-28 pb-20 bg-[#e8e8e8]" id="contacts">
-      <form id="contactForm" action="send_email_contact_form.php" method="POST" >
-        <div class="card1">
-          <a class="singup">Help us to Improve</a>
-          <div class="inputBox1">
-            <input type="text" required="required" id="name" name="name">
-            <span class="user">Name</span>
+      <form id="contactForm" action="send_email_contact_form.php" method="POST">
+        <div class="flex flex-col items-center justify-center px-6 py-8 lg:w-96 lg:py-0">
+          <div class="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <p class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+                Help us to Improve
+                </p>
+                <div>
+                  <label class="block mb-2 text-sm font-medium text-gray-900">
+                    Your Full Name
+                  </label>
+                  <input placeholder="Apurba Khanra" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="name" name="name" type="text">
+                </div>
+                <div>
+                  <label class="block mb-2 text-sm font-medium text-gray-900">
+                    Your Email Address
+                  </label>
+                  <input placeholder="apurbakhanra@gmail.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="email" name="email" type="text">
+                </div>
+                <div>
+                  <label class="block mb-2 text-sm font-medium text-gray-900">
+                    Your Valuable Feedback
+                  </label>
+                  <input placeholder="Leave us a comment" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="feedback" name="feedback" type="text">
+                </div>
+  
+                <button class="w-full bg-purple-500 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  focus:ring-blue-800 text-white" id="submit-button-contact" type="submit">
+                  Submit
+                </button>
+
+                <div id="response-message-contact"></div>
+            </div>
           </div>
-          <div class="inputBox1">
-              <input type="text" required="required" id="email" name="email">
-              <span class="user">Email</span>
-          </div>
-
-          <div class="inputBox">
-              <input type="text" required="required" id="feedback" name="feedback">
-              <span>Feedback</span>
-          </div>
-
-          <button class="enter" id="submit-button-contact" type="submit">Submit</button>
-
-          <div id="response-message-contact"></div>
-
-      </div>
+        </div>
       </form>
         
         <div>
@@ -971,6 +1000,7 @@
     keenSliderNext.addEventListener('click', () => keenSlider.next())
   </script>
 
+  <!-- GO TO TOP  -->
   <script>
     window.onscroll = function() {scrollFunction()};
 
